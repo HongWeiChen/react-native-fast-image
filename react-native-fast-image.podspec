@@ -21,5 +21,4 @@ Pod::Spec.new do |s|
 
   s.dependency 'React'
   s.dependency 'SDWebImage', '~> 0.0.1'
-  s.dependency 'IDMPhotoBrowser'
 end
