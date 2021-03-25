@@ -1,24 +1,20 @@
 require 'json'
 
-package = JSON.parse(File.read(File.join(__dir__, 'package.json')))
-
 Pod::Spec.new do |s|
-  s.name = "react-native-fast-image"
-  s.version = package['version']
-  s.summary = "🚩 FastImage, performant React Native image component."
+  package = JSON.parse(File.read(File.join(__dir__, 'package.json')))
 
-  s.authors = { "Dylan Vann" => "dylan@dylanvann.com" }
-  s.homepage = "https://github.com/DylanVann/react-native-fast-image#readme"
-  s.license = "MIT"
+  s.name          = "RNFastImage"
+  s.version       = package['version']
+  s.summary       = package['description']
+  s.authors       = { "Dylan Vann" => "dylan@dylanvann.com" }
+  s.homepage      = "https://github.com/DylanVann/react-native-fast-image#readme"
+  s.license       = "MIT"
+  s.platforms     = { :ios => "8.0", :tvos => "9.0" }
+  s.framework     = 'UIKit'
+  s.requires_arc  = true
+  s.source        = { :git => "https://github.com/DylanVann/react-native-fast-image.git", :tag => "v#{s.version}" }
+  s.source_files  = "ios/**/*.{h,m}"
 
-  s.platform = :ios, "8.0"
-  s.framework    = 'UIKit'
-  s.requires_arc = true
-
-  s.source = { :git => "https://github.com/DylanVann/react-native-fast-image.git" }
-  s.source_files = "ios/**/*.{h,m}"
-  s.exclude_files = "ios/Vendor/**/*.{h,m}"
-
-  s.dependency 'React'
-  s.dependency 'SDWebImage', '~> 0.0.1'
+  s.dependency 'React-Core'
+  s.dependency 'SDRNWebImage'
 end
