@@ -73,6 +73,9 @@
             "react-native-fast-image-example-cocoapods*"
         ]
     },
+    "files": [
+            "react-native-fast-image.podspec"
+        ],
     "release": {
         "plugins": [
             "@semantic-release/commit-analyzer",
